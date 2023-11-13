@@ -1,1 +1,1 @@
-teamTest =LOVE
+teamTest =LOVE　コンカフェに行かないほうがいい
