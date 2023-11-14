@@ -1,0 +1,283 @@
+@import url(sanitize.css);
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;500&display=swap');
+
+body {
+    /* background-color: #f0f0f0; */
+    background-image: url(../img/roze.jpg);
+    background-repeat: repeat-y; /*背景繰り返し(縦)*/
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0, .3);
+}
+
+.content {
+    background-color: rgb(254, 248, 240) !important;
+    /* background-image: url(../img/background-light.png) !important;
+    background-repeat: repeat; */
+}
+
+header {
+    background-color: #422814;
+    padding: 10px;
+    color: #000;
+    background-image: url(../img/umi.jpg);
+}
+
+header h1 {
+    font-family: 'Radio Canada', sans-serif;
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.description img {
+    float: left;
+    margin: 0 10px 10px 0;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    box-shadow: 0 0 5px gray;
+    /* border-radius: 8px; */
+    border-radius: 50%;
+}
+
+.information h1 {
+    font-size: 20px;
+    margin: 0 10px 10px 0;
+    float: left;
+}
+
+.information .type {
+    display: inline;
+    background-color: #FFDDFF;
+    padding: 3px 5px;
+    font-size: 80%;
+    font-weight: bold;
+}
+
+.description {
+    clear: left;
+}
+
+.content {
+    background-color: #fff;
+    padding: 20px;
+}
+
+a {
+    color: #666;
+}
+
+.songs {
+    margin: 0 0 20px;
+}
+
+.songs h2 {
+    clear: left;
+    font-size: 100%;
+    font-weight: bold;
+    color: #FFF;
+    margin: 0;
+    background-color: #1b1063;
+    padding: 3px 10px;
+    text-align: center;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 2px;
+}
+
+.songs ol {
+    padding: 10px 0px 20px;
+    margin-top: 20px;
+    list-style: decimal inside;
+    list-style-type: none;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+/* 文字の下線が繋がりをなくす */
+.songs li {
+    border-bottom: 1px solid #ccc;
+    /* widthで下線の長さを調整 */
+    width: 45%;
+    float: left;
+    padding: 5px 10px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.clearfix:after {
+    content:" ";
+    display: table;
+    clear: both;
+}
+
+h3 {
+    position: relative;
+    padding: 0.6em;
+    background: #e0edff;
+    width: 150px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  h3:after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 30px;
+    border: 15px solid transparent;
+    border-top: 15px solid #e0edff;
+    width: 0;
+    height: 0;
+  }
+
+
+  /* よくある質問CSS */
+ .fqxBox-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.faqBox{
+    padding: 0.2em 0.5em;
+    margin: 15px 0;
+    background: #d6ebff;
+    box-shadow: 0px 0px 0px 10px #d6ebff;
+    border: dashed 2px white;
+    width: 350px;
+}
+.faqBox p {
+    margin: 0; 
+    padding: 0;
+}
+
+/* 画像リストページへのリンク */
+.btn-img-div{
+    margin: 10px;
+}
+
+.btn-imgList{
+    height: 50px;
+    width: 150px;
+    background-color: #166cf8;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    color: #FFF;
+    font-size: 80%;
+    background-color: rgb(68, 68, 68);
+}
+
+footer .iconList {
+    padding: 10px 0;
+}
+
+.iconList .fab {
+    padding: 0 5px;
+}
+
+footer .copyRight {
+    padding-bottom: 20px;
+}
+
+
+/* タブレットサイズのレイアウト */
+@media only screen and (max-width:1000px) {
+    body {
+        padding: 0;
+    }
+
+    .fqxBox-content {
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+
+    .faqBox {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .songs li {
+        width: 40%;
+    }
+}
+
+
+/* スマホサイズレイアウト */
+@media only screen and (max-width:750px) {
+
+    .description img {
+        float: none;
+        display: block; /*ブロック状態にしないとmarginが効かない*/
+        margin: 0 auto;
+    }
+
+    header {
+        padding: 8px;
+    }
+
+    header h1 {
+        font-size: 12px;
+    }
+
+    .songs li {
+        float: none;
+        width: inherit; /*親要素を受け継ぐ*/
+    }
+
+    /* よくある質問CSS */
+    .fqxBox-content {
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+
+    .faqBox {
+        margin: 15px 0;
+    }
+
+    footer .copyRight {
+        margin-bottom: 0;
+    }
+
+    .footMessage {
+        width: 350px;
+        margin: 0 auto;
+        text-align: left;
+    }
+}
+
+.description img:hover {
+    opacity: .5;
+}
+
+.snsIconLine:hover {
+    color: rgb(17, 221, 17);
+}
+
+.snsIconTwitter:hover {
+    color: rgb(13, 193, 248);
+}
+
+.snsIconInsta:hover {
+    color: #FFDDFF;
+}

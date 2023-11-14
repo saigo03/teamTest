@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>キャンプ場一覧</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link rel="stylesheet" href="css/imgListstyle.css">
+</head>
+
+<body>
+    <header>
+        <h1>CAMP PICK UP!!</h1>
+    </header>
+    
+<div class="container">
+    <div id="img_unit">
+    </div>
+</div><!-- container -->
+
+
+<!-- ランダムな画像を表示するエリア -->
+<div id="randomImg">
+</div>
+
+<button id="randomBtn">おすすめを調べる</button>
+<p class="btn_p">↑上記のボタンを押すとランダムな場所が表示されます</p>
+
+
+<p><a href="index.html" class="btn-imgList">HOMEへ</a></p>
+<script>
+    
+var images = [
+    {
+        "path": "img/img011.jpg",
+        "prefectures": "山梨県南巨摩郡身延町",
+        "place": "浩庵キャンプ場",
+        "comment": "浩庵キャンプ場は、富士五湖の一つ「本栖湖」の湖畔にあるキャンプ場で、雄大な富士山が美しい湖と一緒に見れる人気のキャンプ場です!"
+    },
+    {
+        "path": "img/img02.jpg",
+        "prefectures": "長野県塩尻市大字片丘",
+        "place": "高ボッチ高原",
+        "comment": "高ボッチ高原は、正確にはキャンプ場ではありません。しかし、特別に定められたエリアでのみ、キャンプでの宿泊が許可されています。北アルプス・諏訪湖・南アルプス・富士山を眺められる最高のロケーションと共に高原の自然を楽しむことができます!"
+    },
+    {
+        "path": "img/img03.jpg",
+        "prefectures": "静岡県磐田市駒場",
+        "place": "竜洋海洋公園オートキャンプ場",
+        "comment": "竜洋海洋公園オートキャンプ場は、綺麗な芝生サイトで、施設やサービスが豊富な高規格キャンプ場です。近くには海や公園があるのでファミリーキャンパーさんも楽しめそうです!"
+    },
+    {
+        "path": "img/img04.jpg",
+        "prefectures": "静岡県賀茂郡西伊豆町西伊豆町",
+        "place": "キャンプ黄金崎",
+        "comment": "西伊豆の海が目の前に見えるキャンプ場のロケーションは最高です。伊豆を感じるならココです!夕日で黄金に染まることから名づけられたジオスポット「黄金崎」をたっぷり楽しめます"
+    },
+];
+
+    var img;
+    var place;
+    var comment;
+    var div;
+
+    for (var i=0; i<images.length; i++) {
+        img = document.createElement('img');
+        img.setAttribute('src', images[i].path);
+
+        place = document.createElement('div');
+        place.className = 'inner';
+        place.innerHTML = '<p>' + images[i].place + '<span>' + images[i].prefectures + '</span></p>';
+
+        comment = document.createElement('p');
+        comment.className = 'comment';
+        comment.innerHTML = images[i].comment;
+
+        div = document.createElement('div');
+        div.className = 'photo',
+        div.appendChild(img);
+        place.appendChild(comment);
+        div.appendChild(place);
+        
+        document.getElementById('img_unit').appendChild(div);
+    }
+
+    var ctn = 0;
+    var random_img;
+    var msg;
+    var div;
+    var x;
+    var y;
+
+    document.getElementById('randomBtn').addEventListener('click', function() {
+
+        // ランダムの数字
+        x = Math.floor(Math.random() * (0 - 4)) + 4;
+
+        if(ctn === 0){
+            // おすすめ場所の表示
+            random_img = document.createElement('img');
+            random_img.setAttribute('src', images[x].path);
+
+            msg = document.createElement('p');
+            msg.className = 'pick_msg';
+            msg.innerHTML = 'あなたにおすすめの場所です';
+
+            place = document.createElement('div');
+            place.className = 'inner';
+            place.innerHTML = '<p>' + images[x].place + '<span>' + images[x].prefectures + '</span></p>';
+
+            comment = document.createElement('p');
+            comment.className = 'comment';
+            comment.innerHTML = images[x].comment;
+
+            div = document.createElement('div');
+            div.className = 'randomContent photo';
+            div.appendChild(msg);
+            div.appendChild(place);
+            place.appendChild(comment);
+            div.appendChild(random_img);
+
+            document.getElementById('randomImg').appendChild(div);
+
+            y = x;
+            ctn++;
+        }else{
+            // 2回目以降の画像切り替え
+
+            // 前回と異なる場所になるまで繰り返す
+            while(x === y){
+                x = Math.floor(Math.random() * (0 - 3)) + 3;
+            }
+            random_img.setAttribute('src', images[x].path);
+            place.innerHTML = '<p>' + images[x].place + '<span>' + images[x].prefectures + '</span></p>';
+
+            // コメントを作り直す
+            comment = document.createElement('p');
+            comment.className = 'comment';
+            comment.innerHTML = images[x].comment;
+
+            place.appendChild(comment);
+            
+            y = x;
+        }
+
+    });
+</script>
+</body>
+</html>

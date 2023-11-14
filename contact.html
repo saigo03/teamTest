@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/contactStyle.css">
+
+    <title>質問フォーム</title>
+  </head>
+  <body>   
+        <header>
+            <div class="row m-0">
+                <div class="col-sm-6 text-center">
+                    <h1>質問フォーム</h1>
+                </div>
+                <div class="top col-sm-6">
+                    <a href="index.html">HOMEへ戻る</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="container mb-5">
+            <form method="post" class="row">
+                <div class="col-sm-8 offset-sm-2">
+                    <h1 class="mb-3">Contact</h1>
+                    <p class="text-danger">※注意事項</p>
+                    <p>この質問フォームは送信ボタンを押しても、内容が送信されることはありません。</p>
+                    <div class="form-group">
+                        <label for="name">お名前<span class="label text-danger">※必須</span></label>
+                        <input type="name" id="name" name="name" class="form-control" placeholder="お名前を入力してください" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">メールアドレス<span class="label text-danger">※必須</span></label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="メールアドレスを入力してください" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tel">電話番号</label>
+                        <input type="tel" id="tel" name="tel" class="form-control" placeholder="電話番号を入力してください">
+                    </div>               
+
+                    <div class="form-group">
+                        <label for="message">質問内容<span class="label text-danger">※必須</span></label>
+                        <textarea type="message" id="message" rows="8" class="form-control" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="agree" value="agree" required>
+                                注意事項に同意の上で送信します。
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">送信する</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- index.htmlのfooterと同じコード -->
+        <footer>
+            &copy; SAIGO.inc
+            <div class="iconList">
+                <i class="snsIconLine fab fa-line fa-2x"></i>
+                <i class="snsIconTwitter fab fa-twitter-square fa-2x"></i>
+                <i class="snsIconInsta fab fa-instagram fa-2x"></i>
+            </div>
+
+            <a href="index.html">TOPへ戻る</a>
+            <p>プライバシーポリシー</p>
+            <p>このホームページに掲載されている文章や写真等を転載しないようにお願い致します</p>
+        </footer>
+        
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

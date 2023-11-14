@@ -1,0 +1,126 @@
+body {
+    margin: 0; /* 余白を 0 に */
+    padding: 0; /* 要素内余白を 0 に */
+    background-image: url(../img/background-light.png);
+}
+
+.container {
+    max-width: 600px; /* 最大幅を 600px に */
+    margin: 0 auto; /* 左右を中央揃えに */
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, .3); /* ドロップシャドウをかける */
+}
+
+img {
+    width: 100%; /* 画像の幅を画面幅一杯に */
+    margin: 0; /* 余白を0 に */
+    vertical-align: top; /* 画像間に余白が出るバグを補正 */
+}
+
+header {
+    background-color: #054214; /* 背景色を濃い青に */
+    color: #fff; /* 文字色を白に */
+    position: fixed; /* ヘッダーを画面内固定に */
+    top: 0; /* 位置を一番上に */
+    width: 100%; /* 幅を画面幅一杯に */
+    z-index: 100; /* 重なったときの優先度を上に */
+}
+
+header h1 {
+    margin: 0; /* 余白をなくす */
+    font-size: 25px; /* 文字の大きさを 25px に */
+    padding: 5px; /* 要素内余白を 5px に */
+    text-align: center; /* テキストを中央揃えに */
+    font-family: 'Open Sans Condensed', sans-serif; /* フォントを Web フォントに */
+}
+
+.photo {
+    position: relative; /* 画像の上にキャプションが重ねられるように */
+}
+
+.photo .inner {
+    position: absolute; /* キャプションを画像の上に重ねる */
+    bottom: 0; /* 位置を画像の最下部に */
+    width: 100%; /* 幅は一杯に */
+    background-color: rgba(0, 0, 0, .5); /* 背景色を半透明の黒に */
+    font-size: 15px; /* 文字の大きさを 10px に */
+    color: pink; /* 文字色を白に */
+    margin: 0; /* 余白を 0 に */
+}
+
+.inner p {
+    padding: 5px; /* 要素内余白を 20px に */
+    margin-bottom: 0;
+    font-weight: bold;
+}
+.inner span {
+    margin-left: 10px; /* 左に 10px の余白 */
+}
+
+.comment{
+    color: #fff;
+    font-size: 12px;
+    margin: 3px 0;
+}
+
+.btn-imgList{
+    height: 50px;
+    width: 150px;
+    background-color: #166cf8;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+/* ランダム画像CSS */
+/* randomContent */
+
+#randomBtn{
+    height: 50px;
+    width: 150px;
+    background-color: #166cf8;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+#randomImg{
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.randomContent{
+    border: 2px solid gray;
+    box-shadow: 0 0 3px gray;
+    margin-top: 10px;
+}
+
+.randomContent p{
+    margin: 0;
+}
+
+.pick_msg{
+    background-color: black;
+    color: #FFF;
+    padding: 5px 0;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn_p{
+    font-size: 13px;
+    margin: 0;
+}
+
+@media only screen and (min-width: 800px){
+    #randomBtn{
+        margin-left: 200px;
+    }
+
+    .btn_p{
+        margin-left: 200px;
+    }
+}
